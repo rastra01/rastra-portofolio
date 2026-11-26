@@ -55,4 +55,5 @@ RUN printf ':{$PORT:80} {\n root * /app/public\n php_server\n}\n' \
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 
-CMD ["run", "--config", "/etc/frankenphp/Caddyfile"]
+ENTRYPOINT ["/usr/local/bin/frankenphp", "run"]
+CMD ["--config", "/etc/frankenphp/Caddyfile", "--adapter", "caddyfile"]
