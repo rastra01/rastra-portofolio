@@ -1,0 +1,58 @@
+# Build frontend assets
+FROM node:22-alpine AS frontend
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+
+# Laravel + FrankenPHP
+FROM dunglas/frankenphp:1-php8.3
+
+RUN install-php-extensions \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    intl \
+    zip \
+    opcache
+
+RUN cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+WORKDIR /app
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+COPY . .
+
+RUN mkdir -p \
+    storage/framework/cache \
+    storage/framework/sessions \
+    storage/framework/views \
+    storage/logs \
+    bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
+
+RUN composer install \
+    --no-dev \
+    --prefer-dist \
+    --optimize-autoloader \
+    --no-interaction
+
+COPY --from=frontend /app/public/build /app/public/build
+
+# Configure FrankenPHP to serve Laravel's public directory
+RUN printf ':{$PORT:80} {\n root * /app/public\n php_server\n}\n' \
+    > /etc/frankenphp/Caddyfile
+
+ENV APP_ENV=production
+ENV APP_DEBUG=false
+
+CMD ["run", "--config", "/etc/frankenphp/Caddyfile"]
