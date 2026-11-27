@@ -12,7 +12,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-padding-top: 76px;
 }
 
@@ -26,7 +26,13 @@ h1, h2, h3, .brand {
 
 .snap-section {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+}
+
+.section-visual {
+    background-image: var(--section-visual);
+    background-repeat: no-repeat;
+    background-position: right 2% center;
+    background-size: min(34vw, 390px) auto;
 }
 
 @keyframes hero-fade-up {
@@ -125,10 +131,6 @@ h1, h2, h3, .brand {
     transition: transform 0.3s ease;
 }
 
-.tech-card-index {
-    transition: letter-spacing 0.3s ease;
-}
-
 .project-track {
     display: flex;
     overflow-x: auto;
@@ -191,10 +193,6 @@ h1, h2, h3, .brand {
 
     .tech-card:hover::after {
         transform: scaleX(1);
-    }
-
-    .tech-card:hover .tech-card-index {
-        letter-spacing: 0.16em;
     }
 
     .project-control:not(:disabled):hover {
@@ -280,6 +278,18 @@ h1, h2, h3, .brand {
     }
 }
 
+.project-screen-desktop::after {
+    position: absolute;
+    right: -8%;
+    bottom: -14px;
+    left: -8%;
+    height: 10px;
+    border-radius: 0 0 9px 9px;
+    background: linear-gradient(to bottom, #68716c, #28302c);
+    box-shadow: 0 7px 12px rgba(0, 0, 0, 0.3);
+    content: "";
+}
+
 @media (hover: hover) {
     .hero-portrait:hover {
         transform: translateY(-10px) scale(1.02);
@@ -303,7 +313,6 @@ h1, h2, h3, .brand {
     .project-control,
     .tech-card,
     .tech-card::after,
-    .tech-card-index,
     .reveal,
     .reveal-stagger > *,
     .interactive-card {

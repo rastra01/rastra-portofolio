@@ -82,58 +82,6 @@
             </a>
         </section>
 
-        <section class="reveal mt-14">
-            <p class="font-mono text-xs tracking-[0.18em] text-[#36D399]">02 / MOBILE DEVELOPMENT</p>
-            <h2 class="mt-3 text-3xl font-bold md:text-4xl">CitraPay</h2>
-            <p class="mt-3 max-w-2xl text-lg text-gray-300">Sistem Manajemen Keuangan Perumahan</p>
-            <p class="mt-5 max-w-3xl leading-8 text-gray-400">
-                CitraPay adalah aplikasi pengelolaan keuangan perumahan berbasis mobile untuk membantu mendigitalisasi pembayaran iuran warga dan transaksi keuangan. Aplikasi ini mencakup verifikasi pembayaran, pencatatan pemasukan dan pengeluaran, laporan keuangan, serta pemantauan pembayaran warga.
-            </p>
-            <p class="mt-6 max-w-2xl leading-7 text-gray-400">Proyek ini terdiri dari backend layanan API dan aplikasi mobile sebagai frontend.</p>
-
-            <div class="mt-6 flex flex-wrap gap-2">
-                @foreach (['Flutter', 'Laravel', 'REST API', 'MySQL'] as $technology)
-                    <span class="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-gray-300">{{ $technology }}</span>
-                @endforeach
-            </div>
-
-            <div class="mt-8 grid gap-5 md:grid-cols-2">
-                <article class="rounded-2xl border border-white/10 bg-white/[0.025] p-6 md:p-8">
-                    <p class="font-mono text-xs tracking-[0.18em] text-[#36D399]">BACKEND · LARAVEL</p>
-                    <h3 class="mt-4 text-xl font-semibold">CitraPay Backend</h3>
-                    <p class="mt-3 leading-7 text-gray-400">
-                        Repository backend untuk layanan API CitraPay, yang menghubungkan aplikasi mobile dengan data dan fitur pengelolaan keuangan.
-                    </p>
-                    <a href="https://github.com/rastra01/citrapay-backend"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#36D399] px-4 py-2.5 font-semibold text-[#0B0F0E] transition hover:bg-[#28b982]">
-                        Buka repository backend
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                            <path d="M7 17 17 7M8 7h9v9"/>
-                        </svg>
-                    </a>
-                </article>
-
-                <article class="rounded-2xl border border-white/10 bg-white/[0.025] p-6 md:p-8">
-                    <p class="font-mono text-xs tracking-[0.18em] text-[#36D399]">FRONTEND · FLUTTER</p>
-                    <h3 class="mt-4 text-xl font-semibold">CitraPay Mobile</h3>
-                    <p class="mt-3 leading-7 text-gray-400">
-                        Repository aplikasi mobile Flutter yang menjadi antarmuka pengguna untuk mengakses fitur CitraPay.
-                    </p>
-                    <a href="https://github.com/rastra01/citrapay-mobile"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#36D399] px-4 py-2.5 font-semibold text-[#0B0F0E] transition hover:bg-[#28b982]">
-                        Buka repository frontend
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                            <path d="M7 17 17 7M8 7h9v9"/>
-                        </svg>
-                    </a>
-                </article>
-            </div>
-        </section>
-
         <div class="mt-16 border-t border-white/10 pt-8">
             <a href="{{ route('portfolio') }}#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-[#36D399] transition hover:text-white">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">

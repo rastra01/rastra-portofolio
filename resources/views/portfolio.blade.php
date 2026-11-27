@@ -202,7 +202,7 @@
         </section>
 
         <!-- TEKNOLOGI -->
-        <section id="stack" class="snap-section reveal mx-auto max-w-6xl px-6 py-24">
+        <section id="stack" class="snap-section reveal section-visual mx-auto max-w-6xl px-6 py-24" style="--section-visual: url('{{ asset('images/section-visual.svg') }}')">
             <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
                     <p class="mb-3 text-sm font-semibold tracking-widest text-[#36D399]">02 / TEKNOLOGI</p>
@@ -211,9 +211,8 @@
             </div>
 
             <ul aria-label="Daftar teknologi" class="reveal-stagger mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                @foreach (['PHP', 'Laravel', 'MySQL', 'REST API', 'JavaScript', 'Tailwind CSS', 'Git', 'HTML & CSS'] as $index => $tech)
-                    <li class="group tech-card flex min-h-28 flex-col justify-between rounded-xl border border-white/10 bg-[#141A18] p-5">
-                        <span class="tech-card-index font-mono text-xs text-[#36D399]">{{ sprintf('%02d', $index + 1) }}</span>
+                @foreach (['PHP', 'Python', 'Laravel', 'MySQL', 'REST API', 'JavaScript', 'Tailwind CSS', 'Git', 'HTML & CSS'] as $tech)
+                    <li class="group tech-card flex min-h-28 flex-col justify-center rounded-xl border border-white/10 bg-[#141A18] p-5">
                         <span class="text-lg font-semibold text-gray-300 transition-colors group-hover:text-[#36D399]">{{ $tech }}</span>
                     </li>
                 @endforeach
@@ -254,6 +253,10 @@
                         'description' => 'Aplikasi pengelolaan keuangan perumahan berbasis mobile untuk mendigitalisasi pembayaran iuran warga dan transaksi keuangan. Aplikasi ini menyediakan verifikasi pembayaran, pencatatan pemasukan dan pengeluaran, laporan keuangan, serta pemantauan pembayaran warga untuk meningkatkan efisiensi administrasi dan transparansi keuangan.',
                         'technologies' => ['Flutter', 'Laravel', 'REST API', 'MySQL'],
                         'gallery_label' => 'APLIKASI CITRAPAY',
+                        'repositories' => [
+                            ['label' => 'Backend Repository', 'url' => 'https://github.com/rastra01/citrapay-backend'],
+                            ['label' => 'Frontend Repository', 'url' => 'https://github.com/rastra01/citrapay-mobile'],
+                        ],
                         'screenshots' => [
                             ['file' => 'foto citrapay 1.png', 'alt' => 'Halaman input pembayaran warga', 'position' => 'left-[5%] top-[10%] rotate-[-8deg]'],
                             ['file' => 'foto citrapay 2.png', 'alt' => 'Halaman login CitraPay', 'position' => 'right-[5%] top-[12%] rotate-[8deg]'],
@@ -262,32 +265,39 @@
                         ],
                     ],
                     [
-                        'name' => 'CitraPay',
-                        'subtitle' => 'Sistem Manajemen Keuangan Perumahan',
-                        'description' => 'Aplikasi pengelolaan keuangan perumahan berbasis mobile untuk mendigitalisasi pembayaran iuran warga dan transaksi keuangan. Aplikasi ini menyediakan verifikasi pembayaran, pencatatan pemasukan dan pengeluaran, laporan keuangan, serta pemantauan pembayaran warga untuk meningkatkan efisiensi administrasi dan transparansi keuangan.',
-                        'technologies' => ['Flutter', 'Laravel', 'REST API', 'MySQL'],
-                        'gallery_label' => 'APLIKASI CITRAPAY',
+                        'name' => 'Polusence',
+                        'subtitle' => 'Pemantauan Kualitas Udara & Edukasi Lingkungan',
+                        'description' => 'Aplikasi mobile berbasis Flutter untuk pemantauan kualitas udara, edukasi lingkungan, dan pelaporan pencemaran. Polusence menyediakan informasi kualitas udara, fitur pelaporan polusi, edukasi lingkungan, serta penukaran poin untuk mendorong kepedulian terhadap lingkungan.',
+                        'technologies' => ['Flutter', 'Firebase'],
+                        'gallery_label' => 'APLIKASI POLUSENCE',
+                        'repositories' => [
+                            ['label' => 'GitHub Repository', 'url' => 'https://github.com/rastra01/polusence1'],
+                        ],
                         'screenshots' => [
-                            ['file' => 'foto citrapay 1.png', 'alt' => 'Halaman input pembayaran warga', 'position' => 'left-[5%] top-[10%] rotate-[-8deg]'],
-                            ['file' => 'foto citrapay 2.png', 'alt' => 'Halaman login CitraPay', 'position' => 'right-[5%] top-[12%] rotate-[8deg]'],
-                            ['file' => 'foto citrapay 3.png', 'alt' => 'Dashboard warga CitraPay', 'position' => 'bottom-[7%] left-[9%] rotate-[-5deg]'],
-                            ['file' => 'foto citrapay 4.png', 'alt' => 'Dashboard pengurus CitraPay', 'position' => 'left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rotate-[2deg]'],
+                            ['file' => 'polusence 1 (1).png', 'alt' => 'Halaman tantangan dan penukaran poin Polusence', 'position' => 'left-[5%] top-[10%] rotate-[-8deg]'],
+                            ['file' => 'polusence 1 (2).png', 'alt' => 'Halaman login Polusence', 'position' => 'right-[5%] top-[12%] rotate-[8deg]'],
+                            ['file' => 'polusence 1 (3).png', 'alt' => 'Beranda dengan informasi kualitas udara Polusence', 'position' => 'bottom-[7%] left-[9%] rotate-[-5deg]'],
+                            ['file' => 'polusence 1 (4).png', 'alt' => 'Halaman statistik kualitas udara Polusence', 'position' => 'left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rotate-[2deg]'],
                         ],
                     ],
                     [
-                        'name' => 'CitraPay',
-                        'subtitle' => 'Sistem Manajemen Keuangan Perumahan',
-                        'description' => 'Aplikasi pengelolaan keuangan perumahan berbasis mobile untuk mendigitalisasi pembayaran iuran warga dan transaksi keuangan. Aplikasi ini menyediakan verifikasi pembayaran, pencatatan pemasukan dan pengeluaran, laporan keuangan, serta pemantauan pembayaran warga untuk meningkatkan efisiensi administrasi dan transparansi keuangan.',
-                        'technologies' => ['Flutter', 'Laravel', 'REST API', 'MySQL'],
-                        'gallery_label' => 'APLIKASI CITRAPAY',
+                        'name' => 'Solid Kids',
+                        'subtitle' => 'Platform Video Edukasi Anak Prasekolah',
+                        'description' => 'Platform video edukasi berbasis web untuk anak prasekolah, dengan dasbor admin untuk mengelola pengguna dan langganan serta meninjau video sebelum dipublikasikan. Kreator juga dapat mengunggah dan mengelola konten melalui dasbor khusus.',
+                        'technologies' => ['HTML', 'CSS', 'PHP', 'MySQL'],
+                        'gallery_label' => 'PLATFORM SOLID KIDS',
+                        'device' => 'desktop',
+                        'repositories' => [
+                            ['label' => 'GitHub Repository', 'url' => 'https://github.com/rastra01/solidkids1'],
+                        ],
                         'screenshots' => [
-                            ['file' => 'foto citrapay 1.png', 'alt' => 'Halaman input pembayaran warga', 'position' => 'left-[5%] top-[10%] rotate-[-8deg]'],
-                            ['file' => 'foto citrapay 2.png', 'alt' => 'Halaman login CitraPay', 'position' => 'right-[5%] top-[12%] rotate-[8deg]'],
-                            ['file' => 'foto citrapay 3.png', 'alt' => 'Dashboard warga CitraPay', 'position' => 'bottom-[7%] left-[9%] rotate-[-5deg]'],
-                            ['file' => 'foto citrapay 4.png', 'alt' => 'Dashboard pengurus CitraPay', 'position' => 'left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rotate-[2deg]'],
+                            ['file' => 'solidkids2.png', 'alt' => 'Halaman login kreator Solid Kids', 'position' => 'left-[14%] top-[10%] rotate-[-3deg]'],
+                            ['file' => 'solidkids3.png', 'alt' => 'Dasbor kreator Solid Kids', 'position' => 'right-0 bottom-[10%] z-20 rotate-[3deg]'],
+                            ['file' => 'solidkids4.png', 'alt' => 'Dasbor admin Solid Kids', 'position' => 'left-[57%] top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 rotate-[1deg]'],
                         ],
                     ],
                 ] as $projectIndex => $project)
+                @php($isDesktopProject = ($project['device'] ?? 'mobile') === 'desktop')
                 <article class="project-slide project-card group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#18221E] via-[#111715] to-[#0B0F0E] p-5 transition duration-500 hover:border-[#36D399]/40 hover:shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:p-8"
                          data-project-slide
                          role="group"
@@ -320,18 +330,14 @@
                             </div>
 
                             <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="https://github.com/rastra01/citrapay-backend"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-2 rounded-lg border border-white/15 px-4 py-2.5 text-sm font-medium text-gray-300 transition hover:border-[#36D399]/50 hover:text-[#36D399]">
-                                    Backend Repository
-                                </a>
-                                <a href="https://github.com/rastra01/citrapay-mobile"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-2 rounded-lg border border-white/15 px-4 py-2.5 text-sm font-medium text-gray-300 transition hover:border-[#36D399]/50 hover:text-[#36D399]">
-                                    Frontend Repository
-                                </a>
+                                @foreach ($project['repositories'] as $repository)
+                                    <a href="{{ $repository['url'] }}"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center gap-2 rounded-lg border border-white/15 px-4 py-2.5 text-sm font-medium text-gray-300 transition hover:border-[#36D399]/50 hover:text-[#36D399]">
+                                        {{ $repository['label'] }}
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
 
@@ -340,11 +346,11 @@
                             <span class="absolute right-5 top-5 z-30 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 font-mono text-[10px] tracking-widest text-gray-400 backdrop-blur">{{ $project['gallery_label'] }}</span>
 
                             @foreach ($project['screenshots'] as $screenshot)
-                                <figure class="project-screen absolute {{ $screenshot['position'] }} aspect-[9/19] w-[29%] max-w-[145px] overflow-hidden rounded-[1.35rem] border-[5px] border-[#27312d] bg-white shadow-2xl transition-transform duration-500 hover:scale-110">
+                                <figure class="project-screen {{ $screenshot['position'] }} {{ $isDesktopProject ? 'project-screen-desktop aspect-[16/10] w-[70%] max-w-[400px] overflow-visible rounded-lg border-[7px] border-[#27312d] bg-[#27312d] p-1' : 'aspect-[9/19] w-[29%] max-w-[145px] overflow-hidden rounded-[1.35rem] border-[5px] border-[#27312d] bg-white' }} absolute shadow-2xl transition-transform duration-500 hover:scale-110">
                                     <img
                                         src="{{ asset('images/' . rawurlencode($screenshot['file'])) }}"
                                         alt="{{ $screenshot['alt'] }}"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover {{ $isDesktopProject ? 'rounded-[2px]' : '' }}"
                                     >
                                 </figure>
                             @endforeach
@@ -381,7 +387,7 @@
         </section>
 
         <!-- PENGALAMAN -->
-        <section id="experience" class="snap-section reveal mx-auto max-w-6xl px-6 py-24">
+        <section id="experience" class="snap-section reveal section-visual mx-auto max-w-6xl px-6 py-24" style="--section-visual: url('{{ asset('images/section-visual.svg') }}')">
             <p class="mb-3 text-sm font-semibold tracking-widest text-[#36D399]">04 / PERJALANAN</p>
             <h2 class="text-3xl font-bold md:text-4xl">Pengalaman & Pendidikan.</h2>
             <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-16">
@@ -402,7 +408,7 @@
         </section>
 
         <!-- KONTAK -->
-        <section id="contact" class="snap-section reveal border-t border-white/10 bg-[#101513]">
+        <section id="contact" class="snap-section reveal section-visual border-t border-white/10 bg-[#101513]" style="--section-visual: url('{{ asset('images/section-visual.svg') }}')">
             <div class="reveal-stagger mx-auto max-w-6xl px-6 py-24 text-center">
                 <p class="mb-3 text-sm font-semibold tracking-widest text-[#36D399]">05 / HUBUNGI SAYA</p>
                 <h2 class="text-4xl font-bold md:text-5xl">Mari membangun sesuatu yang hebat.</h2>
@@ -420,7 +426,7 @@
     </main>
 
     <footer class="snap-section border-t border-white/10 px-6 py-7 text-center text-sm text-gray-500">
-        © {{ date('Y') }} RASTRA.DEV. Dibuat dengan Laravel.
+        © {{ date('Y') }} RASTRA.DEV.
     </footer>
 
 </body>
